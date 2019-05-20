@@ -14,8 +14,7 @@ export class AddCustomersComponent implements OnInit {
   editData: any ={};
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.customerDetails);    
+  ngOnInit() {   
     if(this.customerDetails){
       this.editData = this.customerDetails;
     }else{

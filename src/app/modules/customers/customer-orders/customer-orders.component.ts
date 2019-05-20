@@ -24,9 +24,7 @@ export class CustomerOrdersComponent{
 
   viewOrderDetails(viewOrder: TemplateRef<any>, order) {
     this.modalRef = this.modalService.show(viewOrder);
-    this.orderDetail = order;
-    console.log(this.orderDetail);
-    
+    this.orderDetail = order;    
   }
 
   execOnClose(){

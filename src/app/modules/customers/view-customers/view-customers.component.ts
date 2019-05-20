@@ -41,7 +41,6 @@ export class ViewCustomersComponent{
   viewCustomerActions(customerDetails){
     this.customerName = customerDetails.name;
     this.isCustomerView = true;
-    console.log(customerDetails); 
     this.customerDetails = customerDetails;
     this.customerData = this.customerDetails.orders;   
   }
@@ -70,8 +69,7 @@ export class ViewCustomersComponent{
   }
 
 
-  saveData(data){
-    console.log(data);    
+  saveData(data){  
     data.id = this.customers.length + 1;
     this.customers.push(data);
     this.modalRef.hide();
