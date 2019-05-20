@@ -1,0 +1,41 @@
+<div class="col-md-12">
+    <div class="row justify-content-center">
+       <button class="btn btn-md btn-primary" (click)="addCustomerDetails(addCustomer)">Add New</button>
+    </div>
+    <div class="row p-10">
+       <div class="col">
+          <ul class="list-group">
+             <li class="list-group-item" *ngFor="let row of customers">{{row.name}}
+                <span class="float-right"><i (click)="viewCustomerActions(row)" class='fa fa-arrow-circle-right fa-1x text-success'
+                   ></i></span> 
+             </li>
+          </ul>
+       </div>
+       <div class="col" *ngIf="isCustomerView">
+          <ul class="list-group">
+             <li class="list-group-item disabled" aria-disabled="true">{{customerName}}</li>
+             <li class="list-group-item"> ORDERS <span class="float-right"><i (click)="viewOrders()"
+                class='fa fa-arrow-circle-right fa-1x text-success' ></i></span></li>
+             <li class="list-group-item">DETAILS <span class="float-right"><i (click)="viewCustomerDetails()"
+                class='fa fa-arrow-circle-right fa-1x text-dark'></i></span></li>
+             <li class="list-group-item">EDIT <span class="float-right">
+               <i (click)="editCustomerDetails(editCustomer)"
+                class='fa fa-pencil fa-1x text-primary'></i></span></li>
+             <li class="list-group-item">DELETE <span class="float-right"><i (click)="deleteCustomer()"
+                class='fa fa-trash-o fa-1x text-danger'></i></span></li>
+          </ul>
+       </div>
+       <div class="col" *ngIf="isOrderView && !detailsView">
+          <app-customer-orders [customerData]="customerData"></app-customer-orders>
+       </div>
+       <div class="col" *ngIf="!isOrderView && detailsView">
+          <app-customer-details [customerDetails]="customerDetails"></app-customer-details>
+       </div>
+       <ng-template #addCustomer>
+          <app-add-customers (onClose)="execOnClose($event)" (saveData)="saveData($event)"></app-add-customers>
+       </ng-template>
+       <ng-template #editCustomer>
+          <app-add-customers [customerDetails]="customerDetails" (onClose)="execOnClose($event)" (updateData)="updateData($event)"></app-add-customers>
+       </ng-template>
+    </div>
+ </div>

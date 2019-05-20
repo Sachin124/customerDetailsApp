@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Modal</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form #customerDetailsForm='ngForm'> 
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" [(ngModel)]="editData.email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="Name">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="editData.name" name="name" id="Name" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input type="text" class="form-control" [(ngModel)]="editData.mobile" name="mobile" id="mobile" placeholder="Mobile">
+    </div>   
+    <button type="button" *ngIf="customerDetails == null" class="btn btn-primary" (click)="save(customerDetailsForm.value)">Submit</button>
+    <button type="button" *ngIf="customerDetails" class="btn btn-primary" (click)="update(customerDetailsForm.value)">Update</button>
+
+  </form>
+</div>
