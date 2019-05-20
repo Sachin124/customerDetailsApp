@@ -6,24 +6,27 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class AddCustomersComponent implements OnInit {
 
-  @Input() customerDetails:any;
+  @Input() customerDetails: any;
   @Output() onClose = new EventEmitter();
   @Output() updateData = new EventEmitter();
   @Output() saveData = new EventEmitter();
 
-  editData: any ={};
+  editData: any = {};
+  modalName: string;
   constructor() { }
 
   ngOnInit() {   
     if(this.customerDetails){
       this.editData = this.customerDetails;
-    }else{
+      this.modalName = `Edit ${this.customerDetails.name} Information`;
+    } else {
+      this.modalName = `Add New Customer Information`;
       this.customerDetails = null;
     }
   }
 
-  closeModal(){
-    this.onClose.emit(); 
+  closeModal():void {
+    this.onClose.emit();
     this.onClose.emit('all closed');
   }
 
@@ -32,7 +35,7 @@ export class AddCustomersComponent implements OnInit {
   }
 
 
-  update(value){
+  update(value):void {
     value.id = this.editData.id;
     this.updateData.emit(value);
   }

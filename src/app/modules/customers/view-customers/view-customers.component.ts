@@ -27,8 +27,9 @@ export class ViewCustomersComponent{
             {orderId: 8, order: "Keyboard"},
             {orderId: 9, order: "Cooler"}
     ] }
-  ]
-  customerName: string;
+  ];
+
+  customerName: string; // to store customer name
   isCustomerView: boolean;
   isOrderView: boolean;
   customerData: any;
@@ -38,36 +39,47 @@ export class ViewCustomersComponent{
   constructor(private modalService: BsModalService) { }
 
 
-  viewCustomerActions(customerDetails){
+  viewCustomerActions(customerDetails):void{
     this.customerName = customerDetails.name;
     this.isCustomerView = true;
     this.customerDetails = customerDetails;
     this.customerData = this.customerDetails.orders;   
   }
 
-  viewOrders(){
+//  View particular customer order details
+
+  viewOrders():void{
     this.isOrderView = true;
     this.detailsView = false;
-
   }
 
-  viewCustomerDetails(){
+//  hide or show customer information
+  viewCustomerDetails():void{
     this.isOrderView = false;
     this.detailsView = true;
   }
 
-  addCustomerDetails(addCustomer: TemplateRef<any>) {
+// To open the pop-up bootstrap model for Add customer information
+
+
+  addCustomerDetails(addCustomer: TemplateRef<any>):void {
     this.modalRef = this.modalService.show(addCustomer);
   }
 
-  editCustomerDetails(editCustomer: TemplateRef<any>) {
+// To open the pop-up bootstrap model for edit particular customer information
+
+
+  editCustomerDetails(editCustomer: TemplateRef<any>) :void{
     this.modalRef = this.modalService.show(editCustomer);
   }
 
-  execOnClose($event: any){
+// To close the pop-up bootstrap model
+
+  execOnClose($event: any):void{
     this.modalRef.hide();
   }
 
+// To save the new customer in customers array
 
   saveData(data){  
     data.id = this.customers.length + 1;
@@ -79,14 +91,12 @@ export class ViewCustomersComponent{
   updateData(data){
     const customerIndex = this.customers.findIndex(p=>{
       return p.id === data.id;
-    })
-
+    });
 
     const customer = {
       ...this.customers[customerIndex]
     }
 
-    // customer.name = event.target.value;
     customer.name = data.name;
     customer.mobile = data.mobile; 
     customer.email = data.email; 
@@ -100,6 +110,7 @@ export class ViewCustomersComponent{
     // })
   }
 
+// To Delete the particular customer information 
 
   deleteCustomer(){
     // const customerIndex =  this.customerDetails.id;
