@@ -1,16 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component,  Input } from '@angular/core';
 
 @Component({
   selector: 'app-customer-details',
-  templateUrl: './customer-details.component.html',
-  styleUrls: ['./customer-details.component.css']
+  template:`<div class="card" style="width: 20rem;">
+  <img src="../../../../assets/img/user.png" style="width:50%" class="card-img-top mx-auto d-block" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{customerDetails.name}}</h5>
+    <p class="card-text"><a class="text-info" href="tel:{{customerDetails.mobile}}">{{customerDetails.mobile}}</a></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>`
 })
-export class CustomerDetailsComponent implements OnInit {
+export class CustomerDetailsComponent{
 
   @Input() customerDetails:any;
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

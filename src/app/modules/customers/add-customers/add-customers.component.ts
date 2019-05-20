@@ -2,8 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-customers',
-  templateUrl: './add-customers.component.html',
-  styleUrls: ['./add-customers.component.css']
+  templateUrl: './add-customers.component.html'
 })
 export class AddCustomersComponent implements OnInit {
 

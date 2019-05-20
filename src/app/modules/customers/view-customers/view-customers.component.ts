@@ -1,11 +1,10 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component,  TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-view-customers',
-  templateUrl: './view-customers.component.html',
-  styleUrls: ['./view-customers.component.css']
+  templateUrl: './view-customers.component.html'
 })
-export class ViewCustomersComponent implements OnInit {
+export class ViewCustomersComponent{
 
   customers: any[] = [
     {
@@ -38,10 +37,6 @@ export class ViewCustomersComponent implements OnInit {
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService) { }
 
-  ngOnInit() {
-// let localStorageData = 
-//     this.allCustomerData = []
-  }
 
   viewCustomerActions(customerDetails){
     this.customerName = customerDetails.name;
@@ -53,6 +48,8 @@ export class ViewCustomersComponent implements OnInit {
 
   viewOrders(){
     this.isOrderView = true;
+    this.detailsView = false;
+
   }
 
   viewCustomerDetails(){
@@ -77,11 +74,11 @@ export class ViewCustomersComponent implements OnInit {
     console.log(data);    
     data.id = this.customers.length + 1;
     this.customers.push(data);
+    this.modalRef.hide();
+
   }
 
   updateData(data){
-    debugger
-    console.log(data);
     const customerIndex = this.customers.findIndex(p=>{
       return p.id === data.id;
     })
@@ -98,6 +95,8 @@ export class ViewCustomersComponent implements OnInit {
 
     const customers = [...this.customers]
     customers[customerIndex] = customer;
+    this.modalRef.hide();
+
     // this.setState({
     //   customers:customers
     // })
@@ -105,12 +104,19 @@ export class ViewCustomersComponent implements OnInit {
 
 
   deleteCustomer(){
-    const customerIndex =  this.customerDetails.id;
+    // const customerIndex =  this.customerDetails.id;
 
-    // const customer = this.state.customers.slice();
+    const customerIndex = this.customers.findIndex(p=>{
+      return p.id === this.customerDetails.id;
+    });
+
     let customer = [...this.customers];
     customer.splice(customerIndex, 1);
     this.customers = customer;
+
+    this.isCustomerView = false;
+    this.isOrderView = false;
+    this.detailsView = false;
   }
 
 }

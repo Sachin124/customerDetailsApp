@@ -9,6 +9,7 @@ import { CustomerOrdersComponent } from './customer-orders/customer-orders.compo
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +17,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ModalModule.forRoot(),
     RouterModule.forChild(CustomersRoutingModule)    
   ],
-  declarations: [AddCustomersComponent, ViewCustomersComponent, CustomerDetailsComponent, CustomerOrdersComponent]
+  declarations: [AddCustomersComponent, ViewCustomersComponent, CustomerDetailsComponent, CustomerOrdersComponent, OrderDetailsComponent]
 })
 export class CustomersModule { }
