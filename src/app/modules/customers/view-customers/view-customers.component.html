@@ -1,27 +1,26 @@
 <div class="col-md-12">
     <div class="row justify-content-center">
-       <button class="btn btn-md btn-primary" (click)="addCustomerDetails(addCustomer)">Add New</button>
+       <button class="btn btn-md gradient-button gradient-button-3" (click)="addCustomerDetails(addCustomer)">Add New</button>
     </div>
     <div class="row p-10">
        <div class="col">
-          <ul class="list-group">
-             <li class="list-group-item" *ngFor="let row of customers">{{row.id}}. {{row.name}}
-                <span class="float-right"><i (click)="viewCustomerActions(row)" class='fa fa-arrow-circle-right fa-1x text-success'
+          <ul class="list-group card-box-shadow">
+             <li class="list-group-item c-pointer" *ngFor="let row of customers" (click)="viewCustomerActions(row)">{{row.name}}
+                <span class="float-right"><i  class='fa fa-arrow-circle-right fa-1x text-success'
                    ></i></span> 
              </li>
           </ul>
        </div>
        <div class="col" *ngIf="isCustomerView">
-          <ul class="list-group">
+          <ul class="list-group card-box-shadow">
              <li class="list-group-item disabled" aria-disabled="true">{{customerName}}</li>
-             <li class="list-group-item"> ORDERS <span class="float-right"><i (click)="viewOrders()"
+             <li class="list-group-item c-pointer" (click)="viewOrders()"> ORDERS <span class="float-right"><i 
                 class='fa fa-arrow-circle-right fa-1x text-success' ></i></span></li>
-             <li class="list-group-item">DETAILS <span class="float-right"><i (click)="viewCustomerDetails()"
+             <li class="list-group-item c-pointer" (click)="viewCustomerDetails()">DETAILS <span class="float-right"><i 
                 class='fa fa-arrow-circle-right fa-1x text-dark'></i></span></li>
-             <li class="list-group-item">EDIT <span class="float-right">
-               <i (click)="editCustomerDetails(editCustomer)"
+             <li class="list-group-item c-pointer" (click)="editCustomerDetails(editCustomer)">EDIT <span class="float-right"><i 
                 class='fa fa-pencil fa-1x text-primary'></i></span></li>
-             <li class="list-group-item">DELETE <span class="float-right"><i (click)="deleteCustomer()"
+             <li class="list-group-item c-pointer" (click)="deleteCustomer()">DELETE <span class="float-right"><i 
                 class='fa fa-trash-o fa-1x text-danger'></i></span></li>
           </ul>
        </div>

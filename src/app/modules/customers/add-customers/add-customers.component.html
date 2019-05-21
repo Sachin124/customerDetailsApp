@@ -20,8 +20,8 @@
       <label for="mobile">Mobile</label>
       <input type="text" class="form-control" [(ngModel)]="editData.mobile" name="mobile" id="mobile" placeholder="Mobile">
     </div>   
-    <button type="button" *ngIf="customerDetails == null" class="btn btn-primary" (click)="save(customerDetailsForm.value)">Submit</button>
-    <button type="button" *ngIf="customerDetails" class="btn btn-primary" (click)="update(customerDetailsForm.value)">Update</button>
+    <button type="button" *ngIf="customerDetails == null" class="btn btn-md gradient-button gradient-button-3" (click)="save(customerDetailsForm.value)">Submit</button>
+    <button type="button" *ngIf="customerDetails" class="btn btn-md gradient-button gradient-button-3" (click)="update(customerDetailsForm.value)">Update</button>
 
   </form>
 </div>

@@ -15,8 +15,8 @@ export class AddCustomersComponent implements OnInit {
   modalName: string;
   constructor() { }
 
-  ngOnInit() {   
-    if(this.customerDetails){
+  ngOnInit():void {
+    if (this.customerDetails) {
       this.editData = this.customerDetails;
       this.modalName = `Edit ${this.customerDetails.name} Information`;
     } else {
@@ -30,7 +30,7 @@ export class AddCustomersComponent implements OnInit {
     this.onClose.emit('all closed');
   }
 
-  save(value){    
+  save(value):void {
     this.saveData.emit(value);
   }
 

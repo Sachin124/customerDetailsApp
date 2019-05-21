@@ -4,8 +4,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   selector: 'app-view-customers',
   templateUrl: './view-customers.component.html'
 })
-export class ViewCustomersComponent{
-
+export class ViewCustomersComponent {
+// Default customer Array
   customers: any[] = [
     {
       id: 1, name: "John Due", mobile: "1234567890", email: "abc@example.com",
@@ -38,6 +38,7 @@ export class ViewCustomersComponent{
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService) { }
 
+// To Display Some Actions card for particular customer  
 
   viewCustomerActions(customerDetails):void{
     this.customerName = customerDetails.name;
@@ -81,14 +82,14 @@ export class ViewCustomersComponent{
 
 // To save the new customer in customers array
 
-  saveData(data){  
+  saveData(data):void{
     data.id = this.customers.length + 1;
     this.customers.push(data);
-    this.modalRef.hide();
-
   }
 
-  updateData(data){
+// To update the particular customer information 
+
+  updateData(data):void{
     const customerIndex = this.customers.findIndex(p=>{
       return p.id === data.id;
     });
@@ -103,29 +104,20 @@ export class ViewCustomersComponent{
 
     const customers = [...this.customers]
     customers[customerIndex] = customer;
-    this.modalRef.hide();
-
-    // this.setState({
-    //   customers:customers
-    // })
   }
 
 // To Delete the particular customer information 
 
-  deleteCustomer(){
-    // const customerIndex =  this.customerDetails.id;
-
+  deleteCustomer():void{
     const customerIndex = this.customers.findIndex(p=>{
       return p.id === this.customerDetails.id;
     });
-
-    let customer = [...this.customers];
+    const customer = [...this.customers];
     customer.splice(customerIndex, 1);
     this.customers = customer;
-
-    this.isCustomerView = false;
     this.isOrderView = false;
     this.detailsView = false;
+    this.isCustomerView = false;
   }
 
 }

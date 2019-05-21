@@ -1,5 +1,5 @@
 
-<div class="sidenav">
+<!-- <div class="sidenav">
     <div class="logo">
         <a class="simple-text logo-mini">
           <div class="logo-img">
@@ -11,16 +11,48 @@
 
       <ul class="nav flex-column">
           <li routerLinkActive="active" *ngFor="let menuitem of menuItems" class="nav-item">
-            <!--If is a single link-->
             <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'" class="nav-link"> <i class="fa fa-{{menuitem.icontype}}"></i>
              {{menuitem.title}}
             </a>
           </li>
         </ul>
-      <!-- <ul class="nav navbar-nav">
-          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"> <a [routerLink]="['/dashboard']">DASHBOARD</a></li>
-          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"> <a [routerLink]="['/customers']">CUSTOMERS</a></li>
-        </ul> -->
-  <!-- <a href="javascript:void(0)" routerLink="/dashboard" [routerLinkActive]="['active']">DASHBOARD</a>
-  <a href="javascript:void(0)" routerLink="/customers" [routerLinkActive]="['active']">CUSTOMERS</a> -->
+</div> -->
+
+<div class="collapse navbar-collapse">
+    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link pl-0 text-nowrap" href="#"> <img src="../../../../favicon.ico"/><span class="font-weight-bold" routerLink="/dashboard">Assignment</span></a>
+        </li>
+        <li routerLinkActive="active btn gradient-navbar gradient-button-3" *ngFor="let menuitem of menuItems" class="nav-items">
+            <a class="nav-link pl-0" [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'"><i class="fa fa-{{menuitem.icontype}}  fa-fw"></i> <span class="d-none d-md-inline">{{menuitem.title}}</span></a>
+        </li>
+      
+    </ul>
 </div>
+
+<!-- <aside class="col-12 col-md-2 p-0 bg-dark">
+    <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+        <div class="collapse navbar-collapse">
+            <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                <li class="nav-item">
+                    <a class="nav-link pl-0 text-nowrap" href="#"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Brand</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="#"><i class="fa fa-heart-o fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="#"><i class="fa fa-book fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="#"><i class="fa fa-heart codeply fa-fw"></i> <span class="d-none d-md-inline">Codeply</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="#"><i class="fa fa-star codeply fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="#"><i class="fa fa-star fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside> -->

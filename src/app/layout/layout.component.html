@@ -1,24 +1,37 @@
-
-<div class="wrapper">
-    <div class="sidebar">
-        <app-sidebar></app-sidebar>
-        <div class="sidebar-background" style="background-image: url(assets/img/sidebar-1.jpg)"></div>
-    </div>
-    <div class="main-panel">
-        <app-navbar></app-navbar>
+<!-- <div class="wrapper">
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+    <div class="sidebar-background" style="background-image: url(assets/img/sidebar-1.jpg)"></div>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
   </div>
   <div class="main-content">
-  
-  <div class="container-fluid">
-  <div class="row">
-  
-  
+    <div class="container-fluid">
+      <div class="row">
         <router-outlet></router-outlet>
-    </div>
-       
+      </div>
     </div>
   </div>
-  
-    <!-- <app-fixedplugin></app-fixedplugin> -->
+</div> -->
+
+
+<div class="container-fluid">
+  <div class="row min-vh-100">
+    <aside class="col-12 col-md-2 col-lg-2 p-0 bg-dark">
+      <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+        <app-sidebar></app-sidebar>
+      </nav>
+    </aside>
+
+    <main class="col padding-off body-background bg-faded ">
+      <div class="gp-o">
+        <app-navbar></app-navbar>
+      </div>
+      <div class="py-3 padding-on">
+          <router-outlet></router-outlet>
+
+      </div>
+    </main>
   </div>
-  
+</div>

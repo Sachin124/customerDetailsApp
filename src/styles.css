@@ -3,9 +3,17 @@ body {
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.body-background {
+  background-color: #eee;
+}
+
+.card-box-shadow {
+  box-shadow: 0 2px 4px 0 #cacaca;
+}
+
 .sidenav {
   height: 100%;
-  width: 160px;
+  /* width:auto; */
   position: fixed;
   z-index: 1;
   top: 0;
@@ -28,7 +36,7 @@ body {
 
 .active{
   color: #f1f1f1;
-  background-color: #818181;
+  /* background-color: #818181; */
 }
 .main {
   margin-left: 160px;
@@ -45,14 +53,27 @@ body {
   /* Increased text to enable scrolling */
 }
 
-
+.padding-on{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.padding-off{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  padding-bottom: 5%;
+}
 .main-content {
   margin-left: 160px;
   /* Same as the width of the sidenav */
   padding: 0px 10px;
   padding-top: 15px;
 }
-
+.bg-navbar{
+  background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+}
+.c-pointer{
+  cursor: pointer;
+}
 .fa {
   cursor: pointer;
 }
@@ -69,4 +90,81 @@ body {
   .sidenav a {
     font-size: 18px;
   }
+}
+
+
+/*  Gredient Buttons */
+
+.gradient-button {
+  margin:10px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #FFF !important;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+}
+.gradient-button:hover{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin: 8px 10px 12px;
+}
+
+.gradient-button-1 {background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%)}
+.gradient-button-1:hover { background-position: right center; }
+
+.gradient-button-3 {background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%)}
+.gradient-button-3:hover { background-position: right center; }
+
+
+/* gradient Navbar */
+
+.nav-items{
+  margin: 14px 0px 0px -8px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  /* font-size: 20px; */
+  /* padding: 0px !important; */
+  text-align: center;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  background-size: 200% auto;
+  /* color: #FFF !important; */
+  /* box-shadow: 0 0 20px #717171; */
+  border-radius: 10px;
+  /* width: 200px; */
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+  /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+  cursor: pointer;
+  /* display: inline-block; */
+  border-radius: 25px;
+  /* height: 38px; */
+}
+.gradient-navbar {
+  margin: 14px 0px 0px -8px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 20px;
+  padding: 0px !important;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #FFF !important;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+  height: 38px;
 }
