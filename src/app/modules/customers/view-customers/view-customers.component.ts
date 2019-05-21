@@ -85,6 +85,8 @@ export class ViewCustomersComponent {
   saveData(data):void{
     data.id = this.customers.length + 1;
     this.customers.push(data);
+    this.modalRef.hide();
+
   }
 
 // To update the particular customer information 
@@ -104,6 +106,7 @@ export class ViewCustomersComponent {
 
     const customers = [...this.customers]
     customers[customerIndex] = customer;
+    this.modalRef.hide();
   }
 
 // To Delete the particular customer information 
