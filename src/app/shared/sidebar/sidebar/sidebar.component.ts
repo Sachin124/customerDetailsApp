@@ -21,6 +21,23 @@ export const ROUTES: RouteInfo[] = [
     title: "CUSTOMERS",
     type: "link",
     icontype: "user"
+  },
+  {
+    path: "/chart/basic-line",
+    title: "Basic-Line",
+    type: "link",
+    icontype: "user"
+  },
+  {
+    path: "/chart/ajax-loaded",
+    title: "Ajax loaded",
+    type: "link",
+    icontype: "user"
+  }, {
+    path: "/chart/basic-area",
+    title: "Basic Area",
+    type: "link",
+    icontype: "user"
   }
 ];
 @Component({

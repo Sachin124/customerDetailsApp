@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-// import {} from './modules/customers/customers.module'
+import {} from './modules/charts/charts.module'
 export const AppRoutes: Routes = [
     {
         path: '',
@@ -17,6 +17,10 @@ export const AppRoutes: Routes = [
             {
                 path: 'customers',
                 loadChildren: './modules/customers/customers.module#CustomersModule'
+            },
+            {
+                path: 'chart',
+                loadChildren: './modules/charts/charts.module#ChartsModule'
             }
         ]
     }

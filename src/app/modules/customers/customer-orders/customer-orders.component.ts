@@ -15,9 +15,12 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   `
 })
 export class CustomerOrdersComponent {
+
+  
   @Input() customerData: any;
   orderDetails;
   modalRef: BsModalRef;
+
   constructor(private modalService: BsModalService) { }
 
   viewOrderDetails(viewOrderDetail: TemplateRef<any>, order): void {
@@ -26,10 +29,10 @@ export class CustomerOrdersComponent {
   }
 
 
-// To close the pop-up bootstrap model
+  // To close the pop-up bootstrap model
 
-execOnClose($event: any):void{
-  this.modalRef.hide();
-}
+  execOnClose($event: any): void {
+    this.modalRef.hide();
+  }
 
 }
